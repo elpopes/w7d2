@@ -12,7 +12,8 @@
   </head>
 
   <body>
-      <h1 id="title_ma">Music App</h1>
+    <div id="content">
+         <h1 id="title_ma">Music App</h1>
 
     <% if logged_in? %>
       <h2>Logged in as: <%= current_user.email %></h2>
@@ -28,5 +29,8 @@
 
     <%= yield %>
 
+    
+    </div>
+     
   </body>
 </html>
