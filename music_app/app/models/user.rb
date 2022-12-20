@@ -13,10 +13,11 @@ class User < ApplicationRecord
   end
 
   def is_password?(password)
-    BCrypta::Password.new(self.password_digest).is_password?(password)
+    BCrypt::Password.new(self.password_digest).is_password?(password)
   end
 
   def password=(pass)
+    debugger
     self.password_digest = BCrypt::Password.create(pass)
     @password = pass
   end
